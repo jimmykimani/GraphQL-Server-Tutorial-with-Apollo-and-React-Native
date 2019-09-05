@@ -1,78 +1,49 @@
-import React from 'react';
-import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import React from "react";
+import { createStackNavigator } from "react-navigation";
+import { fromBottom } from "react-navigation-transitions";
+import { TouchableOpacity, View } from "react-native";
 
-import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import HomeScreen from "../screens/HomeScreen";
+import AddNoteScreen from "../screens/AddNoteScreen";
+import { Images } from "../constants";
+import { MenuStyle, IconStyle } from "./styled";
 
-const config = Platform.select({
-  web: { headerMode: 'screen' },
-  default: {},
-});
+const goBackHeader = goBack => (
+  <TouchableOpacity
+    activeOpacity={1}
+    style={{ paddingHorizontal: 20 }}
+    onPress={() => goBack()}
+  >
+    <View>
+      <IconStyle source={Images.back} style={{ height: 15, width: 9 }} />
+    </View>
+  </TouchableOpacity>
+);
 
 const HomeStack = createStackNavigator(
   {
-    Home: HomeScreen,
+    Home: {
+      screen: HomeScreen,
+      navigationOptions: ({ navigation: { goBack } }) => ({
+        headerStyle: MenuStyle
+      })
+    },
+    NewNote: {
+      screen: AddNoteScreen,
+      navigationOptions: ({ navigation: { goBack } }) => ({
+        headerStyle: MenuStyle,
+        headerLeft: () => goBackHeader(goBack)
+      })
+    }
   },
-  config
-);
-
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
-    />
-  ),
-};
-
-HomeStack.path = '';
-
-const LinksStack = createStackNavigator(
   {
-    Links: LinksScreen,
-  },
-  config
+    transitionConfig: ({ scenes }) => {
+      const nextScene = scenes[scenes.length - 1];
+      if (nextScene.route.routeName === "NewNote") return fromBottom(550);
+    }
+  }
 );
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
-  ),
-};
+HomeStack.path = "";
 
-LinksStack.path = '';
-
-const SettingsStack = createStackNavigator(
-  {
-    Settings: SettingsScreen,
-  },
-  config
-);
-
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
-  ),
-};
-
-SettingsStack.path = '';
-
-const tabNavigator = createBottomTabNavigator({
-  HomeStack,
-  LinksStack,
-  SettingsStack,
-});
-
-tabNavigator.path = '';
-
-export default tabNavigator;
+export default HomeStack;

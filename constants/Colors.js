@@ -1,14 +1,7 @@
-const tintColor = '#2f95dc';
+const white = "#ffffff";
+const darkGray = "#595A5A";
+const orange = "#FFA500";
+const mediumGray = "#9B9B9B";
+const strokeGray = "#E6E6E6";
 
-export default {
-  tintColor,
-  tabIconDefault: '#ccc',
-  tabIconSelected: tintColor,
-  tabBar: '#fefefe',
-  errorBackground: 'red',
-  errorText: '#fff',
-  warningBackground: '#EAEB5E',
-  warningText: '#666804',
-  noticeBackground: tintColor,
-  noticeText: '#fff',
-};
+export { orange, darkGray, white, mediumGray, strokeGray };
