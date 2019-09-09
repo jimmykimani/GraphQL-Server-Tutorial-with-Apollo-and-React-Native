@@ -1,13 +1,22 @@
 import * as WebBrowser from "expo-web-browser";
 import React, { Component } from "react";
+import { Mutation } from "react-apollo";
 import { ScrollView } from "react-native";
+import gql from "graphql-tag";
 
 import { NotesContainer, NotesWrapper } from "./styled";
-import {
-  Button,
-  TextArea,
-  KeyboardWrapper
-} from "../components";
+import { Button, TextArea, KeyboardWrapper } from "../components";
+
+const createPlayerMutation = gql`
+  mutation {
+    createNewNote(
+      text: "To us, family means putting your arms around each other and being there"
+    ) {
+      id
+      text
+    }
+  }
+`;
 
 class AddNoteScreen extends Component {
   constructor(props) {

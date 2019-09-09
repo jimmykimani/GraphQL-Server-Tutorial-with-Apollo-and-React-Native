@@ -25,7 +25,7 @@ const HomeStack = createStackNavigator(
     Home: {
       screen: HomeScreen,
       navigationOptions: ({ navigation: { goBack } }) => ({
-        headerStyle: MenuStyle
+        headerStyle: MenuStyle,
       })
     },
     NewNote: {
@@ -44,6 +44,5 @@ const HomeStack = createStackNavigator(
   }
 );
 
-HomeStack.path = "";
 
 export default HomeStack;

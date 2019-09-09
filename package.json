@@ -11,19 +11,26 @@
   "jest": {
     "preset": "jest-expo"
   },
-    "rnpm": {
-      "assets": ["./assets/fonts/"]
-    },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts/"
+    ]
+  },
   "dependencies": {
+    "@apollo/react-hooks": "^3.0.1",
     "@expo/samples": "~3.0.3",
     "@expo/vector-icons": "^10.0.3",
     "@react-navigation/web": "^1.0.0-alpha.9",
+    "apollo-client-preset": "^1.0.8",
     "expo": "^34.0.1",
     "expo-asset": "^6.0.0",
     "expo-constants": "6.0.0",
     "expo-font": "~6.0.0",
     "expo-web-browser": "6.0.0",
+    "graphql": "^14.5.4",
+    "graphql-tag": "^2.10.1",
     "react": "16.8.3",
+    "react-apollo": "^3.0.1",
     "react-dom": "^16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
     "react-native-gesture-handler": "~1.3.0",
