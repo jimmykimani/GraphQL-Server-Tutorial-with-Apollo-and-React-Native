@@ -3,10 +3,12 @@ import styled from "styled-components/native";
 const Container = styled.View`
   flex: 1;
   padding: 20px;
+  background-color: #fcfaf7;
 `;
 
 const NotesContainer = styled.View`
   flex: 1;
+  background-color: #fcfaf7;
 `;
 
 const NotesWrapper = styled.View`
@@ -14,14 +16,14 @@ const NotesWrapper = styled.View`
 `;
 
 const PlaceholdeWrapper = styled.View`
-  padding-top: 10px;
+  padding-top: 12px;
 `;
 
 const HeaderText = styled.Text`
   font-weight: 900;
   font-size: 36px;
   padding-bottom: 20px;
-  color: #595a5a;
+  color: #b89b72;
 `;
 
 export {

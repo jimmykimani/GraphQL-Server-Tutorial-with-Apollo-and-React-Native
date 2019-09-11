@@ -7,23 +7,26 @@ import { Asset } from "expo-asset";
 import * as Font from "expo-font";
 
 import { InMemoryCache } from "apollo-cache-inmemory";
+//import ApolloClient, InMemoryCache, and HttpLink to define your client to cnnect to your graphql server
 import { ApolloClient } from "apollo-client";
 import { HttpLink } from "apollo-link-http";
+//import your ApolloProvider from react-apollo to wrap your app.
 import { ApolloProvider } from "react-apollo";
 
-// import { mockedLink } from "./mock";
+//import  Navigator so your application renders the initial route
 import AppNavigator from "./navigation/AppNavigator";
 
+//Define your client for your APolloProvider connecting to your graphql server.
 const client = new ApolloClient({
   cache: new InMemoryCache(),
+  //Assign your link with a new instance of a HttpLink linking to your graphql server
   link: new HttpLink({
-    uri: "http://localhost:8000/graphql"
+    uri: "https://graphql-server-node-js-103.herokuapp.com/graphql"
   })
 });
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fff",
     flex: 1
   }
 });

@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components/native";
 
-const chGray = "#F5F5F5";
-const strokeGray = "#E6E6E6";
+const chGray = "#E6E4E3";
 
 const RowContainer = styled.TouchableOpacity`
   flex-direction: row;
@@ -16,9 +15,9 @@ const RowContainer = styled.TouchableOpacity`
 
 const StyledTextInput = styled.Text`
   /* font-family: WorkSans-Regular; */
-  color: #a2a2a2;
+  color: #4a4a4a;
   opacity: 0.8;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
 `;
 

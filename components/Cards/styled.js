@@ -7,7 +7,7 @@ import {
 } from "../../constants/Colors";
 
 const CardContainer = styled.View`
-  background-color: #f0f0f0;
+  background-color: #d8d8d8;
   border-style: solid;
   width: 100%;
   padding: 16px 16px 16px 16px;
@@ -17,7 +17,6 @@ const CardContainer = styled.View`
 `;
 
 const TimestampContainer = styled.Text`
-
   font-size: 10px;
   text-transform: uppercase;
   line-height: 12px;
@@ -36,7 +35,7 @@ const EditIcon = styled.Image`
 `;
 
 const CardText = styled.Text`
-  /* font-family: WorkSans-Regular; */
+  font-weight: 500;
   color: ${darkGray};
   line-height: 23px;
   font-size: 16px;
