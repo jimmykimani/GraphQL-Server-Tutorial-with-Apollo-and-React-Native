@@ -8,6 +8,7 @@ import AddNoteScreen from "../screens/AddNoteScreen";
 import { Images } from "../constants";
 import { MenuStyle, IconStyle } from "./styled";
 
+//Assign your goback navigator to variable call goBackHeader
 const goBackHeader = goBack => (
   <TouchableOpacity
     activeOpacity={1}
@@ -43,7 +44,5 @@ const HomeStack = createStackNavigator(
     }
   }
 );
-
-HomeStack.path = "";
 
 export default HomeStack;

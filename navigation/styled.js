@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 
 const MenuStyle = {
-  backgroundColor: "#FFFFFf",
+  backgroundColor: "#fcfaf7",
   borderBottomWidth: 0,
   elevation: 0
 };

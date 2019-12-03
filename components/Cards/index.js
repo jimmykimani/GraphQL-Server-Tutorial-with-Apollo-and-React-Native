@@ -12,14 +12,11 @@ import {
 } from "./styled";
 
 const NoteCard = props => {
-  const { onOptions } = props;
+  const { onOptions, noteText } = props;
   return (
     <CardContainer>
       <HeaderContainer>
-        <CardText>
-          To us, family means putting your arms around each other and being
-          there.
-        </CardText>
+        <CardText>{noteText}</CardText>
         <EditWrapper onPress={onOptions}>
           <EditIcon source={Images.more} />
         </EditWrapper>
