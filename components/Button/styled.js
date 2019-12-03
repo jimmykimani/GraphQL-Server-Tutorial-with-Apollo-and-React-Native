@@ -9,8 +9,8 @@ const baseButtonStyles = `
 
 const ButtonStyle = `
   ${baseButtonStyles}
-  background-color:#4A4A4A;
-    color: ${white}
+  background-color:#0165ff;
+  color: ${white}
 `;
 
 const StyledButton = styled.TouchableOpacity`
@@ -21,6 +21,7 @@ const StyledButton = styled.TouchableOpacity`
 const StyledButtonText = styled.Text`
   color: ${white};
   line-height: 19px;
+  font-weight: 700;
 `;
 
 const ButtonText = styled.Text`

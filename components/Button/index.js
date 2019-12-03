@@ -8,8 +8,8 @@ const Button = props => {
   return (
     <StyledButton
       activeOpacity={0.7}
-      color={"#4A4A4A"}
-      underlayColor={"#4A4A4A"}
+      color={"#0165ff"}
+      underlayColor={"#0165ff"}
       {...rest}
     >
       <StyledButtonText

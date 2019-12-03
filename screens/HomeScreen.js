@@ -91,8 +91,7 @@ class HomeScreen extends Component {
           data: { notes: [...data] }
         });
       }}
-    >
-    </Mutation>;
+    ></Mutation>;
   };
 
   render() {
@@ -112,12 +111,6 @@ class HomeScreen extends Component {
         </View>
         <ScrollView showsVerticalScrollIndicator={false}>
           <HeaderText>My Notes</HeaderText>
-          <PlaceholdeWrapper>
-            <TextPlaceHolder
-              onHolderPress={() => this._addNewNote()}
-              text={"Add new note"}
-            />
-          </PlaceholdeWrapper>
           <Query query={GET_NOTES}>
             {/* The props.children of the Query will be a callback with a response, and error parameter. */}
             {(response, error, loading) => {
@@ -133,6 +126,7 @@ class HomeScreen extends Component {
                 return (
                   <FlatList
                     data={response.data.notes}
+                    inverted
                     renderItem={item => this._renderItem(item)}
                   />
                 );
@@ -140,6 +134,12 @@ class HomeScreen extends Component {
             }}
           </Query>
         </ScrollView>
+        <PlaceholdeWrapper>
+          <TextPlaceHolder
+            onHolderPress={() => this._addNewNote()}
+            text={"Add a Note"}
+          />
+        </PlaceholdeWrapper>
       </Container>
     );
   }

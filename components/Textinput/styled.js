@@ -18,10 +18,10 @@ const StyledTextArea = styled.TextInput`
   background-color: transparent;
   border-radius: 0;
   padding-left: 0px;
-  opacity: 0.7;
   border-width: 0;
   font-size: 20px;
   margin-bottom: 0;
+  color: #ffffff;
   /* font-family: WorkSans-Regular; */
 `;
 

@@ -1,24 +1,25 @@
 import React from "react";
 import styled from "styled-components/native";
 
-const chGray = "#E6E4E3";
-
 const RowContainer = styled.TouchableOpacity`
+  position: absolute;
+  bottom: 12;
   flex-direction: row;
-  width: 100%;
-  background-color: ${chGray};
-  border-radius: 30px;
-  width: 100%;
-  margin-bottom: 24px;
+  background-color: #0165ff;
+  border-radius: 18px;
+  width: 30%;
+  margin-bottom: 20px;
   padding: 8px 16px;
+  align-items: center;
 `;
 
 const StyledTextInput = styled.Text`
   /* font-family: WorkSans-Regular; */
-  color: #4a4a4a;
-  opacity: 0.8;
+  color: #ffffff;
   font-size: 14px;
   line-height: 22px;
+  font-weight: 700;
+  align-items: center;
 `;
 
 const TextPlaceHolder = props => {

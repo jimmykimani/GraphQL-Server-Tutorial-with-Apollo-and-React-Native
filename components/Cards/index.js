@@ -18,7 +18,6 @@ const NoteCard = props => {
       <HeaderContainer>
         <CardText>{noteText}</CardText>
         <EditWrapper onPress={onOptions}>
-          <EditIcon source={Images.more} />
         </EditWrapper>
       </HeaderContainer>
       <TimestampContainer>1 hour ago</TimestampContainer>

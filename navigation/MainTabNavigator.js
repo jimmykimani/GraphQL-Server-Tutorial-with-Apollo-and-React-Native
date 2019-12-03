@@ -38,10 +38,7 @@ const HomeStack = createStackNavigator(
     }
   },
   {
-    transitionConfig: ({ scenes }) => {
-      const nextScene = scenes[scenes.length - 1];
-      if (nextScene.route.routeName === "NewNote") return fromBottom(550);
-    }
+    mode: "modal"
   }
 );
 

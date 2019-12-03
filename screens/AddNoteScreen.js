@@ -63,6 +63,7 @@ class AddNoteScreen extends Component {
                 value={note}
                 returnKeyType="next"
                 placeholder={"Jot Something"}
+                multiline
                 //onChangeText is basically a simplified version of onChange,
                 //so you can easily use it, without the hassle of going through event.target.value to get changed value.
                 onChangeText={text => this.setState({ note: text })}
